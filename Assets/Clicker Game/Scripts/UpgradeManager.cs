@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
-public class UpgradeManager : MonoBehaviour {
+public class UpgradeManager : MonoBehaviour
+{
 
 	public Click click;
 	public UnityEngine.UI.Text itemInfo;
@@ -26,31 +27,25 @@ public class UpgradeManager : MonoBehaviour {
 	void Update()
 	{
 	
-	    //fix for assignment note #3
-		/*itemInfo.text = itemName + "\nCost: " + cost + "\nCount: "+count+ "\nPower: "+clickPower;
-		if (click.gold >= cost) {
-			GetComponent<Image> ().color = affordable;
-		} else {
-			GetComponent<Image> ().color = standard;
-		
-			}
-			*/
+	    //Remember fix for assignment note #3
 
 		_slider.value = click.gold / cost * 100;
 
 		itemInfo.text = itemName + "\nCost: " + cost + "\nCount: "+count+ "\nPower: "+clickPower;
-		if (_slider.value >= 100) {
-
-		} else {
-
-			
+		if (_slider.value >= 100)
+		{
+		} 
+		else 
+		{	
 		}
 	
 	}
+
 	public void PurchasedUpdate()
 	{
 
-		if (click.gold >= cost) {
+		if (click.gold >= cost)
+		{
 			click.gold -= cost;
 			count += 1;
 			click.goldperclick += clickPower;
